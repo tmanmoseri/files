@@ -1,0 +1,48 @@
+**********************************
+Angular CLI: 13.3.1
+Node: 16.14.2
+Package Manager: npm 8.5.0
+*********************************
+Ionic command-line interface (CLI)
+-----------------------------------
+npm install -g @ionic/cli
+
+npm i -g @ionic/cli@latest
+
+*****************************************************************************************************
+Using the Angular CLI to generate a monorepo and two applications: an Ionic app and a regular web app
+******************************************************************************************************
+generate the new Angular project:
+---------------------------------
+ng new --create-application=false --new-project-root='.' my-monorepo
+cd my-monorepo/
+
+Initialize the monorepo as a multi-app project:
+-----------------------------------------------
+ionic init --multi-app
+
+Generate the web app:
+---------------------
+ng generate application --prefix=web --routing --style=css web
+
+Generate an app:
+-------------------------------------
+ng generate application --prefix=app --routing --style=css app
+
+Add Ionic to project:
+---------------------
+ng add @ionic/angular --project=app
+
+Finally, initialize the Ionic app with the Ionic CLI, marking it as the default project:
+----------------------------------------------------------------------------------------
+**Note: Make sure the value of --project-id is the project key in angular.json.** 
+**The Ionic CLI will use it to run the correct Angular CLI Architect command.**
+cd app/
+ionic init app --type=angular --default --project-id=app
+
+To test, run ionic serve in the root of your monorepo.
+------------------------------------------------------
+**You'll need to set defaultCollection to the @ionic/angular-toolkit package.**
+ng config cli.defaultCollection @ionic/angular-toolkit
+cd my-monorepo/
+ionic serve

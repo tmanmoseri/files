@@ -1,0 +1,31 @@
+
+**********************************
+Angular CLI: 13.3.1
+Node: 16.14.2
+Package Manager: npm 8.5.0
+*********************************
+
+Angular command-line interface (CLI)
+------------------------------------
+npm install -g @angular/cli
+
+To list commands
+----------------
+ng help
+ng generate --help
+
+To create, build, and serve a new, basic Angular project
+--------------------------------------------------------
+ng new my-first-project
+cd my-first-project
+ng serve
+
+To see the new application run in your browser
+----------------------------------------------
+http://localhost:4200/
+
+ To add new files for additional components and services
+--------------------------------------------------------
+ ng generate
+
+
